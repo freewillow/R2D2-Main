@@ -28,7 +28,7 @@ client.on('message', msg => {
 
 //Create a simple Rules embed. People need to know the rules.
 
-if (msg.content.startsWith($rules'))
+if (msg.content.startsWith('rules'))
     msg.channel.sendMessage(" ", {embed: {
             color: 7013413,
             author: {
