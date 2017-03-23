@@ -29,17 +29,17 @@ client.on('message', msg => {
     msg.channel.sendMessage(`Hey! <@` + msg.author.id + `>, :8ball: `+ answers[Math.floor(Math.random() * answers.length)])
   }
   if (msg.content.startsWith(prefix + "mping")) {
-    msg.channel.sendMessage(`Pong! {Date.now() - msg.createdTimestamp}ms.`);
+    msg.channel.sendMessage(`Pong! ` + [Math.floor(Date.now() - msg.createdTimestamp)]);
   }
   if (msg.content.startsWith(prefix + "ip")) {
-    msg.reply('The Server IP is **play.nightsofvalor.com');
+    msg.reply('The Server IP is **play.nightsofvalor.com**');
   }
   if (msg.content.startsWith(prefix + "crate")) {
     msg.reply('You Have Won ' + playercards[Math.floor(Math.random() * playercards.length)]) 
   }
   if (msg.content.startsWith(prefix + "asl")) {
   let [age, sex, location] = msg.content.split(" ").slice(1);
-  msg.reply(`Hello ${msg.author.username}, I see you're a ${age} year old ${sex} from ${location}. Wanna date?`);
+  msg.channel.sendMessage(`Hello <@${msg.author.id}>, I see you're a ${age} year old ${sex} from ${location}. Wanna date?`);
 }
 
   if (msg.content.startsWith(prefix + 'botstats'))
@@ -99,4 +99,4 @@ client.on("message", msg => {
   fs.writeFile('./points.json', JSON.stringify(points), (err) => {if(err) console.error(err)});
 });
 
-client.login('');
+client.login('Mjg2MjQ5OTQ3NjE4MjEzODg4.C5nY6A.QdrKJdLmK1EKLbcqmyMOhU5ZMwg');
