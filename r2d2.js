@@ -90,13 +90,14 @@ client.on("message", msg => {
   }
 
   if(msg.content.startsWith(prefix + "points")) {
+  msg.channel.sendMessage('Please Use Sub-commands. \p`bal`\p`help`')
   let [what, pro, pro2] = msg.content.split(" ").slice(1);
   if (what === "bal")
-    msg.channel.sendMessage("Your Balance is " + userData.points + ", and your level is " + userData.level);
+    msg.channel.sendMessage("Your Balance is **" + userData.points + "**, and your level is " + userData.level);
   if (what === "help")
     msg.channel.sendMessage("Help:\n`bal` Check you Balance");
     }
   fs.writeFile('./points.json', JSON.stringify(points), (err) => {if(err) console.error(err)});
 });
 
-client.login('Mjg2MjQ5OTQ3NjE4MjEzODg4.C5nY6A.QdrKJdLmK1EKLbcqmyMOhU5ZMwg');
+client.login('');
